@@ -60,6 +60,10 @@ namespace Exam5
             {
                 price = 0.00f; // free
             }
+            else if (isMTKmember && isStudent)
+            {
+                price *= 0.40f; // 15% + 45% discount
+            }
             else if (age >= 65)
             {
                 price *= 0.50f; // 50% discount
@@ -72,16 +76,13 @@ namespace Exam5
             {
                 price *= 0.50f; // 50% discount
             }
-            else
+            else if (isStudent)
             {
-                if (isStudent)
-                {
-                    price *= 0.55f; // 45% discount
-                }
-                if (isMTKmember)
-                {
-                    price *= 0.85f; // 15% discount
-                }
+                price *= 0.55f; // 45% discount
+            }
+            else if (isMTKmember)
+            {
+                price *= 0.85f; // 15% discount
             }
 
             return price;
