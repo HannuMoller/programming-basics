@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exam4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const int COUNT = 3;
+            var numbers = new int[COUNT];
+
+            Console.WriteLine("You need to enter {0} numbers...", COUNT);
+
+            int i=0;
+            string snum = null;
+            while (i <COUNT)
+            {
+                try
+                {
+                    Console.Write("Enter #{0} number : ", i);
+                    snum = Console.ReadLine();
+                    int num = int.Parse(snum);
+                    numbers[i] = num;
+                    i++;
+                } catch (Exception ex)
+                {
+                    Console.WriteLine("{0} is not a number!", snum);
+                }
+            }
+
+            sort(numbers);
+
+            Console.Write("Numbers in order: {0}", numbers[0]);
+            i = 1;
+            while (i < COUNT)
+            {
+                Console.Write(", {0}", numbers[i]);
+                i++;
+            }
+            Console.WriteLine();
+
+        }
+
+        private static int[] sort(int[] numbers)
+        {
+            int count = numbers.Count();
+
+            int i = 0;
+            while (i < count)
+            {
+                int n1 = numbers[i];
+                int j = i + 1;
+                while (j < count)
+                {
+                    int n2 = numbers[j];
+                    if (n2 < n1)
+                    {
+                        numbers[i] = n2;
+                        numbers[j] = n1;
+                    }
+                    j++;
+                }
+                i++;
+            }
+            return numbers;
+        }
+    }
+}
