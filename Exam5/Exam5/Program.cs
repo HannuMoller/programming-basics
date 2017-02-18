@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace Exam5
 {
+    /// <summary>
+    /// Exam 5: Read customer data and evaluate ticket price
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Enter customer data...");
+
             Console.Write("Enter name : ");
             string name = Console.ReadLine();
             Customer customer = new Customer(name);
+
             int age = -1;
             while (age < 0)
             {
@@ -27,9 +32,10 @@ namespace Exam5
                     customer.setAge(age);
                 }
             }
-            customer.setMTKmember(YesNo("is customer member of MTK"));
-            customer.setConscript(YesNo("is customer a conscript"));
-            customer.setStudent(YesNo("is customer a student"));
+
+            customer.setMTKmember(YesNo("Is customer a member of MTK"));
+            customer.setConscript(YesNo("Is customer a conscript"));
+            customer.setStudent(YesNo("Is customer a student"));
 
             Console.WriteLine("Price for {0} is {1:F2}", name, customer.getPrice());
             Console.ReadKey();

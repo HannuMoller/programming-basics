@@ -7,6 +7,9 @@ using exam;
 
 namespace Exam1
 {
+    /// <summary>
+    /// Exam 1: read number and evaluate if it is either positive, negative or zero.
+    /// </summary>
     class Exam1
     {
         static void Main(string[] args)

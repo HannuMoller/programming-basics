@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// Read 3 numbers and output them in ascending order
-/// </summary>
 namespace Exam4
 {
+    /// <summary>
+    /// Exam 4: Read 3 numbers and output them in ascending order
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -51,10 +51,10 @@ namespace Exam4
         }
 
         /// <summary>
-        /// sort numeric array
+        /// sort numeric array in ascending order
         /// </summary>
-        /// <param name="numbers">array containing numbers</param>
-        /// <returns>sorted array</returns>
+        /// <param name="numbers"> array containing numbers </param>
+        /// <returns> sorted array </returns>
         private static int[] sort(int[] numbers)
         {
             int count = numbers.Count();
@@ -66,8 +66,10 @@ namespace Exam4
                 int j = i + 1;
                 while (j < count)
                 {
-                    int n2 = numbers[j];                    if (n2 < n1)
+                    int n2 = numbers[j];
+                    if (n2 < n1)
                     {
+                        // swap numbers
                         numbers[i] = n2;
                         numbers[j] = n1;
                         n1 = n2;

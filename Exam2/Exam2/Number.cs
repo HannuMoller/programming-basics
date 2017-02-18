@@ -4,7 +4,7 @@ namespace exam
 {
 
     /// <summary>
-    /// Class Number contains static methods for checking numer properties
+    /// Class Number: contains static methods for checking number properties
     /// </summary>
     public class Number
     {
@@ -21,7 +21,7 @@ namespace exam
         /// check if number is either negative, positive or zero
         /// </summary>
         /// <param name="number"> number to be inspected </param>
-        /// <returns> Negative | Zero | Positive </returns>
+        /// <returns> Number.NEGATIVE | Number.ZERO | Number.POSITIVE </returns>
         public static int check(int number)
         {
             if (number < 0)
@@ -39,7 +39,7 @@ namespace exam
         }
 
         /// <summary>
-        /// Check if number is even
+        /// check if number is even
         /// </summary>
         /// <param name="number"> number to be inspected </param>
         /// <returns> true, if number is even </returns>

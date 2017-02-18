@@ -7,6 +7,9 @@ using exam;
 
 namespace Exam2
 {
+    /// <summary>
+    /// Exam 2: read number and evaluate if it is either odd or even. 
+    /// </summary>
     class Exam2
     {
         static void Main(string[] args)

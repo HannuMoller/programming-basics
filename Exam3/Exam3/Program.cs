@@ -7,6 +7,11 @@ using exam;
 
 namespace Exam3
 {
+    /// <summary>
+    /// Exam 3: read number and evaluate if it is:
+    ///         - either positive, negative or zero
+    ///         - either odd or even
+    /// </summary>
     class Exam3
     {
         static void Main(string[] args)
