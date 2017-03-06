@@ -16,7 +16,7 @@ namespace Palindrome
             Console.WriteLine("Palindrome checker v1.0");
             Console.Write("Enter string : ");
             String pal = Console.ReadLine();
-            if (isPalindrome(pal))
+            if (IsPalindrome(pal))
             {
                 Console.WriteLine("- is a palindrome!");
             }
@@ -32,15 +32,15 @@ namespace Palindrome
         /// </summary>
         /// <param name="s"> string to be inspected </param>
         /// <returns> true, if given string is a palindrome </returns>
-        static Boolean isPalindrome(string s)
+        static Boolean IsPalindrome(string s)
         {
-            s = removeExtra(s);
+            var cc = RemoveExtra(s).ToCharArray();
 
             int i = 0;
-            int j = s.Length - 1;
+            int j = cc.Length - 1;
             while (j > i)
             {
-                if (s.ElementAt(i) != s.ElementAt(j))
+                if (cc[i] != cc[j])
                 {
                     return false;
                 }
@@ -57,21 +57,21 @@ namespace Palindrome
         /// </summary>
         /// <param name="s"> original string </param>
         /// <returns> cleaned up version of string </returns>
-        static string removeExtra(string s)
+        static string RemoveExtra(string s)
         {
-            string s2 = "";
+            var s2 = new StringBuilder();
+            var cc = s.ToCharArray();
             int i = 0;
-            while (i < s.Length)
+            while (i < cc.Length)
             {
-                char c = s.ElementAt(i);
-                if (char.IsLetter(c))
+                if (char.IsLetter(cc[i]))
                 {
-                    s2 += char.ToUpper(c);
+                    s2.Append(char.ToUpper(cc[i]));
                 }
                 i++;
             }
 
-            return s2;
+            return s2.ToString();
         }
     }
 }
