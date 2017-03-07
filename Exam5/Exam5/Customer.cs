@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exam5
+﻿namespace Exam5
 {
     /// <summary>
     /// Customer data and logic for calculating price discounts
@@ -14,11 +8,11 @@ namespace Exam5
         // base price (without discounts) for customer
         const float BASEPRICE = 16.00f;
 
-        String name = null;
-        int age = 0;
-        bool isStudent = false;
-        bool isConscript = false;
-        bool isMTKmember = false;
+        private string _name = null;
+        private int _age = 0;
+        private bool _isStudent = false;
+        private bool _isConscript = false;
+        private bool _isMTKmember = false;
 
         /// <summary>
         /// constructor
@@ -26,78 +20,72 @@ namespace Exam5
         /// <param name="name"> customer's name </param>
         public Customer(string name)
         {
-            this.name = name;
+            _name = name;
         }
 
-        /// <summary>
-        /// set customer's age
-        /// </summary>
-        /// <param name="age"> age in years </param>
-        public void setAge(int age)
+        public string Name
         {
-            this.age = age;
+            get { return _name; }
         }
 
-        /// <summary>
-        /// set customer's student status
-        /// </summary>
-        /// <param name="isStudent"> true, if customer is a student </param>
-        public void setStudent(bool isStudent)
+        public int Age
         {
-            this.isStudent = isStudent;
+            get { return _age; }
+            set { _age = value; }
         }
 
-        /// <summary>
-        /// set customer's conscript status
-        /// </summary>
-        /// <param name="isConscript"> true, if customer is a conscript </param>
-        public void setConscript(bool isConscript)
+        public bool IsStudent
         {
-            this.isConscript = isConscript;
+            get { return _isStudent; }
+            set { _isStudent = value; }
         }
 
-        /// <summary>
-        /// set customer's member of MTK status
-        /// </summary>
-        /// <param name="isMTKmember"> true, if customer is a member of MTK </param>
-        public void setMTKmember(bool isMTKmember)
+        public bool IsConscript
         {
-            this.isMTKmember = isMTKmember;
+            get { return _isConscript; }
+            set { _isConscript = value; }
         }
+
+        public bool IsMTKmember
+        {
+            get { return _isMTKmember; }
+            set { _isMTKmember = value; }
+        }
+
 
         /// <summary>
         /// calculate actual price for customer
         /// </summary>
         /// <returns> actual price with discounts </returns>
-        public float getPrice()
+        public float GetPrice()
         {
             float price = BASEPRICE;
 
-            if (age < 7)
+            if (Age < 7)
             {
                 price = 0.00f; // free ticket for children under 7 years old
             }
-            else if (isMTKmember && isStudent)
+            else if (IsMTKmember && IsStudent)
             {
-                price *= 0.40f; // 15% + 45% discount if customer is student and member of MTK
+                price *= 0.40f; // 15% + 45% discount if customer is both student and member of MTK
             }
-            else if (age >= 65)
+            else if (Age >= 65)
             {
                 price *= 0.50f; // 50% discount for pensioners
             }
-            else if (age <= 15)
+            else if (Age <= 15)
             {
                 price *= 0.50f; // 50% discount for young people (age between 7 and 15 (inclusive))
             }
-            else if (isConscript)
+            else if (IsConscript)
             {
                 price *= 0.50f; // 50% discount for conscripts
             }
-            else if (isStudent)
+            else if (IsStudent)
             {
                 price *= 0.55f; // 45% discount for students
             }
-            else if (isMTKmember)
+            else if (IsMTKmember)
             {
                 price *= 0.85f; // 15% discount for members of MTK
             }

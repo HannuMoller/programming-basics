@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exam5
 {
@@ -16,8 +12,8 @@ namespace Exam5
             Console.WriteLine("Enter customer data...");
 
             Console.Write("Enter name : ");
-            string name = Console.ReadLine();
-            Customer customer = new Customer(name);
+            var name = Console.ReadLine();
+            var customer = new Customer(name);
 
             int age = -1;
             while (age < 0)
@@ -29,15 +25,15 @@ namespace Exam5
                     age = -1;
                 }
                 else {
-                    customer.setAge(age);
+                    customer.Age = age;
                 }
             }
 
-            customer.setMTKmember(YesNo("Is customer a member of MTK"));
-            customer.setConscript(YesNo("Is customer a conscript"));
-            customer.setStudent(YesNo("Is customer a student"));
+            customer.IsMTKmember = YesNo("Is customer a member of MTK");
+            customer.IsConscript = YesNo("Is customer a conscript");
+            customer.IsStudent = YesNo("Is customer a student");
 
-            Console.WriteLine("Price for {0} is {1:F2}", name, customer.getPrice());
+            Console.WriteLine("Price for {0} is {1:F2}", name, customer.GetPrice());
             Console.ReadKey();
         }
 
