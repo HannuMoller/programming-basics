@@ -9,9 +9,12 @@ namespace exam
     public class Number
     {
 
-        public const int NEGATIVE = -1;
-        public const int ZERO = 0;
-        public const int POSITIVE = 1;
+        public enum Sign
+        {
+            NEGATIVE,
+            ZERO,
+            POSITIVE
+        };
 
         public Number()
         {
@@ -22,19 +25,19 @@ namespace exam
         /// </summary>
         /// <param name="number"> number to be inspected </param>
         /// <returns> Number.NEGATIVE | Number.ZERO | Number.POSITIVE </returns>
-        public static int check(int number)
+        public static Sign Check(int number)
         {
             if (number < 0)
             {
-                return NEGATIVE;
+                return Sign.NEGATIVE;
             }
             else if (number > 0)
             {
-                return POSITIVE;
+                return Sign.POSITIVE;
             }
             else
             {
-                return ZERO;
+                return Sign.ZERO;
             }
         }
 
@@ -43,7 +46,7 @@ namespace exam
         /// </summary>
         /// <param name="number"> number to be inspected </param>
         /// <returns> true, if number is even </returns>
-        public static bool isEven(int number)
+        public static bool IsEven(int number)
         {
             return (number % 2 == 0);
         }

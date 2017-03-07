@@ -22,20 +22,23 @@ namespace Exam3
             try
             {
                 int number = int.Parse(snum);
-                switch (Number.check(number))
+                switch (Number.Check(number))
                 {
-                    case Number.NEGATIVE:
+                    case Number.Sign.NEGATIVE:
                         Console.Write("{0} is negative", number);
                         break;
-                    case Number.POSITIVE:
+                    case Number.Sign.POSITIVE:
                         Console.Write("{0} is positive", number);
                         break;
-                    default:
+                    case Number.Sign.ZERO:
                         Console.Write("{0} is zero", number);
+                        break;
+                    default:
+                        Console.Write("{0} is not a number?", number);
                         break;
                 }
 
-                if (Number.isEven(number))
+                if (Number.IsEven(number))
                 {
                     Console.WriteLine(" and even");
                 }
