@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exam4
 {
@@ -36,7 +33,7 @@ namespace Exam4
                 }
             }
 
-            sort(numbers);
+            Sort(numbers);
 
             Console.Write("Numbers in ascending order: {0}", numbers[0]);
             i = 1;
@@ -55,7 +52,7 @@ namespace Exam4
         /// </summary>
         /// <param name="numbers"> array containing numbers </param>
         /// <returns> sorted array </returns>
-        private static int[] sort(int[] numbers)
+        private static int[] Sort(int[] numbers)
         {
             int count = numbers.Count();
 
