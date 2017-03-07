@@ -20,21 +20,24 @@ namespace Exam1
             try
             {
                 int number = int.Parse(snum);
-                switch (Number.check(number))
+                switch (Number.Check(number))
                 {
-                    case Number.NEGATIVE:
+                    case Number.Sign.NEGATIVE:
                         Console.WriteLine("{0} is negative", number);
                         break;
-                    case Number.POSITIVE:
+                    case Number.Sign.POSITIVE:
                         Console.WriteLine("{0} is positive", number);
                         break;
-                    default:
+                    case Number.Sign.ZERO:
                         Console.WriteLine("{0} is zero", number);
+                        break;
+                    default:
+                        Console.WriteLine("{0} is not a number?");
                         break;
                 }
             } catch (Exception ex)
             {
-                Console.WriteLine("{0} was not number!", snum);
+                Console.WriteLine("{0} is not number!", snum);
             }
             Console.ReadKey();
         }
