@@ -32,7 +32,7 @@ namespace Exam1
                         Console.WriteLine("{0} is zero", number);
                         break;
                     default:
-                        Console.WriteLine("{0} is not a number?");
+                        Console.WriteLine("{0} is not a number?", number);
                         break;
                 }
             } catch (Exception ex)
