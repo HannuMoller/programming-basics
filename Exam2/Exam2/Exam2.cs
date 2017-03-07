@@ -16,11 +16,11 @@ namespace Exam2
         {
 
             Console.Write("Enter number : ");
-            string snum = Console.ReadLine();
+            var snum = Console.ReadLine();
             try
             {
                 int number = int.Parse(snum);
-                if (Number.isEven(number))
+                if (Number.IsEven(number))
                 {
                     Console.WriteLine("{0} is even", number);
                 }
