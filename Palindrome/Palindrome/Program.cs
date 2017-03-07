@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Palindrome
 {
@@ -15,14 +12,14 @@ namespace Palindrome
         {
             Console.WriteLine("Palindrome checker v1.0");
             Console.Write("Enter string : ");
-            String pal = Console.ReadLine();
-            if (IsPalindrome(pal))
+            String palindrome = Console.ReadLine();
+            if (IsPalindrome(palindrome))
             {
-                Console.WriteLine("- is a palindrome!");
+                Console.WriteLine("- '{0}' is a palindrome!", palindrome);
             }
             else
             {
-                Console.WriteLine("- is not a palindrome!");
+                Console.WriteLine("- '{0}' is not a palindrome!", palindrome);
             }
             Console.ReadKey();
         }
